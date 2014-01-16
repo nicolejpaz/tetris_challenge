@@ -4,9 +4,9 @@ class Piece
   end
 
   def create_piece
-    @piece = ""
-    2.times { @piece << "#{create_block} " }
+    @piece = []
+    2.times { @piece << create_block }
 
-    [@piece, @piece]
+    [@piece.join(" "), @piece.join(" ")]
   end
 end
