@@ -5,7 +5,7 @@ class Piece
 
   def create_piece
     @piece = ""
-    2.times { @piece << create_block }
+    2.times { @piece << "#{create_block} " }
 
     [@piece, @piece]
   end

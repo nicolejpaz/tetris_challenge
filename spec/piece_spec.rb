@@ -19,7 +19,7 @@ describe Piece do
 
   context "create_piece" do
     it "creates a piece from the individual blocks" do
-      @piece.create_piece.should eql ["\u2588\u2588", "\u2588\u2588"]
+      @piece.create_piece.should eql ["\u2588 \u2588 ", "\u2588 \u2588 "]
     end
   end
 end
