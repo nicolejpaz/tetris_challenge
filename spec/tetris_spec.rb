@@ -27,4 +27,22 @@ describe Tetris do
       @tetris.rows.first.length.should eql 8
     end
   end
+
+  context "#x_coordinate_of_piece" do
+    it "reflects the x coordinate for the current piece" do
+      @tetris.x_coordinate_of_piece.should eql 4
+    end
+  end
+
+  context "#y_coordinate_of_piece" do
+    it "reflects the y coordinate for the current piece" do
+      @tetris.y_coordinate_of_piece.should eql 11
+    end
+  end
+
+  context "#collision_imminent?" do
+    it "should return true if there are not any pieces to the left, right or bottom" do
+      @tetris.collision_imminent?.should eql true
+    end
+  end
 end
