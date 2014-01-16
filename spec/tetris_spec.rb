@@ -49,8 +49,9 @@ describe Tetris do
   context "#drop_piece" do
     it "adds current piece to rows" do
       @tetris.drop_piece
-      @tetris.rows[4][11].should eql "\u2588"
-      @tetris.rows[5][12].should eql "\u2588"
+      2.times do |index|
+        @tetris.rows[4+index][11+index].should eql "\u2588"
+      end
     end
   end
 
