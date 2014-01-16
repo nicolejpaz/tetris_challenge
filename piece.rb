@@ -7,6 +7,6 @@ class Piece
     @piece = []
     2.times { @piece << create_block }
 
-    [@piece.join(" "), @piece.join(" ")]
+    [@piece, @piece]
   end
 end
