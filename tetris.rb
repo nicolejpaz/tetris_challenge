@@ -44,8 +44,9 @@ class Tetris
   end
 
   def collision_imminent?
-    @rows[x_coordinate_of_piece][y_coordinate_of_piece].nil?
-    @rows[x_coordinate_of_piece][y_coordinate_of_piece-1].nil?
+    2.times do |y|
+      @rows[x_coordinate_of_piece][y_coordinate_of_piece-y].nil?
+    end
     clear_right?
   end
 
