@@ -45,4 +45,12 @@ describe Tetris do
       @tetris.collision_imminent?.should eql true
     end
   end
+
+  context "#drop_piece" do
+    it "adds current piece to rows" do
+      @tetris.drop_piece
+      @tetris.rows[4][11].should eql "\u2588"
+      @tetris.rows[5][12].should eql "\u2588"
+    end
+  end
 end

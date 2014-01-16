@@ -44,4 +44,23 @@ class Tetris
     @rows[x_coordinate_of_piece+1][y_coordinate_of_piece].nil?
     @rows[x_coordinate_of_piece][y_coordinate_of_piece-1].nil?
   end
+
+  def drop_piece
+    @rows[x_coordinate_of_piece][y_coordinate_of_piece] = @current_piece.block
+    @rows[x_coordinate_of_piece+1][y_coordinate_of_piece] = @current_piece.block
+    @rows[x_coordinate_of_piece][y_coordinate_of_piece+1] = @current_piece.block
+    @rows[x_coordinate_of_piece+1][y_coordinate_of_piece+1] = @current_piece.block
+  end
+
+  def occupied_space?
+
+  end
+
+  def move_left!
+
+  end
+
+  def move_right!
+
+  end
 end
