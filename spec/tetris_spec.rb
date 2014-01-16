@@ -11,9 +11,9 @@ describe Tetris do
     end
   end
 
-  context "#create_piece" do
-    it "displays the correct Unicode character for each block"
-
-    it "creates a square Tetris piece"
+  context "#drop" do
+    it "creates a new Piece object" do
+      @tetris.drop.should be_an_instance_of Piece
+    end
   end
 end
