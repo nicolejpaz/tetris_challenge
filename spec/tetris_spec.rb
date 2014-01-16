@@ -53,4 +53,30 @@ describe Tetris do
       @tetris.rows[5][12].should eql "\u2588"
     end
   end
+
+  context "#move_left!" do
+    it "moves the piece to the left" do
+      @tetris.move_left!
+      @tetris.piece_position.should eql [3,11]
+    end
+  end
+
+  context "#move_right!" do
+    it "moves the piece to the right" do
+      @tetris.move_right!
+      @tetris.piece_position.should eql [5,11]
+    end
+  end
+
+  context "#clear_left?" do
+    it "checks if the space to the left is clear" do
+      @tetris.clear_left?
+    end
+  end
+
+  context "#clear_right?" do
+    it "checks if the space to the right is clear" do
+      @tetris.clear_right?
+    end
+  end
 end
