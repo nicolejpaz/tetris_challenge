@@ -1,4 +1,4 @@
-require_relative "../piece"
+require_relative '../piece'
 
 describe Piece do
   before :each do
