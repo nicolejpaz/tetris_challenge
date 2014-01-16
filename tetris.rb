@@ -11,9 +11,13 @@ class Tetris
     @rows = []
     create_board_rows
     create_board_columns
-    @piece_position = STARTING_POSITION
+    reset_piece_position
 
     next_piece
+  end
+
+  def reset_piece_position
+    @piece_position = STARTING_POSITION
   end
 
   def create_board_rows
@@ -53,11 +57,17 @@ class Tetris
     @rows[x_coordinate_of_piece+1][y_coordinate_of_piece].nil?
   end
 
+  def clear_down?
+    @rows[x_coordinate_of_piece][y_coordinate_of_piece-1].nil?
+    @rows[x_coordinate_of_piece+1][y_coordinate_of_piece-1].nil?
+  end
+
   def drop_piece
     @rows[x_coordinate_of_piece][y_coordinate_of_piece] = @current_piece.block
     @rows[x_coordinate_of_piece+1][y_coordinate_of_piece] = @current_piece.block
     @rows[x_coordinate_of_piece][y_coordinate_of_piece+1] = @current_piece.block
     @rows[x_coordinate_of_piece+1][y_coordinate_of_piece+1] = @current_piece.block
+    next_piece
   end
 
   def move_left!
@@ -69,6 +79,14 @@ class Tetris
   def move_right!
     if clear_right?
       @piece_position = [x_coordinate_of_piece+1, y_coordinate_of_piece]
+    end
+  end
+
+  def move_down!
+    if clear_down?
+      @piece_position = [x_coordinate_of_piece, y_coordinate_of_piece-1]
+    else
+      drop_piece
     end
   end
 end

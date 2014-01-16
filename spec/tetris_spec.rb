@@ -68,15 +68,36 @@ describe Tetris do
     end
   end
 
+  context "#move_down!" do
+    it "moves the piece down" do
+      @tetris.move_down!
+      @tetris.piece_position.should eql [4,10]
+    end
+  end
+
   context "#clear_left?" do
     it "checks if the space to the left is clear" do
-      @tetris.clear_left?
+      @tetris.clear_left?.should eql true
     end
   end
 
   context "#clear_right?" do
     it "checks if the space to the right is clear" do
-      @tetris.clear_right?
+      @tetris.clear_right?.should eql true
+    end
+  end
+
+  context "#clear_down?" do
+    it "checks if the space below is clear" do
+      @tetris.clear_down?.should eql true
+    end
+  end
+
+  context "#reset_position" do
+    it "resets the piece position to the starting position" do
+      @tetris.move_down!
+      @tetris.reset_piece_position
+      @tetris.piece_position.should eql [4,11]
     end
   end
 end
