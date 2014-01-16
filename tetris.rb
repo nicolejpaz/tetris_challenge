@@ -64,10 +64,11 @@ class Tetris
   end
 
   def drop_piece
-    @rows[x_coordinate_of_piece][y_coordinate_of_piece] = @current_piece.block
-    @rows[x_coordinate_of_piece+1][y_coordinate_of_piece] = @current_piece.block
-    @rows[x_coordinate_of_piece][y_coordinate_of_piece+1] = @current_piece.block
-    @rows[x_coordinate_of_piece+1][y_coordinate_of_piece+1] = @current_piece.block
+    2.times do |x|
+      2.times do |y|
+        @rows[x_coordinate_of_piece+x][y_coordinate_of_piece+y] = @current_piece.block
+      end
+    end
     next_piece
   end
 
