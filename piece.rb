@@ -1,11 +1,11 @@
 class Piece
-  def create_block
+  def block
     "\u2588"
   end
 
   def create_piece
     @piece = []
-    2.times { @piece << create_block }
+    2.times { @piece << block }
 
     [@piece, @piece]
   end
