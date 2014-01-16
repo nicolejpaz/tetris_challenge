@@ -11,7 +11,6 @@ class Tetris
     @rows = []
     create_board_rows
     create_board_columns
-    reset_piece_position
 
     next_piece
   end
@@ -33,6 +32,7 @@ class Tetris
   def next_piece
     piece = Piece.new
     @current_piece = piece
+    reset_piece_position
   end
 
   def x_coordinate_of_piece
