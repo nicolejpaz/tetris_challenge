@@ -9,24 +9,14 @@ class Tetris
 
   def initialize
     @rows = []
-    create_board_rows
-    create_board_columns
+    create_board_rows!
+    create_board_columns!
 
     next_piece
   end
 
   def reset_piece_position
     @piece_position = STARTING_POSITION
-  end
-
-  def create_board_rows
-    BOARD_HEIGHT.times { @rows << [] }
-  end
-
-  def create_board_columns
-    @rows.each do |row|
-      BOARD_WIDTH.times { row << [] }
-    end
   end
 
   def next_piece
@@ -89,6 +79,18 @@ class Tetris
       @piece_position = [x_coordinate_of_piece, y_coordinate_of_piece-1]
     else
       drop_piece
+    end
+  end
+
+  private
+
+  def create_board_rows!
+    BOARD_HEIGHT.times { @rows << [] }
+  end
+
+  def create_board_columns!
+    @rows.each do |row|
+      BOARD_WIDTH.times { row << [] }
     end
   end
 end
