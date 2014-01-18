@@ -69,9 +69,9 @@ describe Tetris do
     end
   end
 
-  context "#move_down!" do
+  context "#advance_piece!" do
     it "moves the piece down" do
-      @tetris.move_down!
+      @tetris.advance_piece!
       @tetris.piece_position.should eql [4,10]
     end
   end
@@ -96,7 +96,7 @@ describe Tetris do
 
   context "#reset_position" do
     it "resets the piece position to the starting position" do
-      @tetris.move_down!
+      @tetris.advance_piece!
       @tetris.reset_piece_position
       @tetris.piece_position.should eql [4,11]
     end

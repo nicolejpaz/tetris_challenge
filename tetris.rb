@@ -74,7 +74,7 @@ class Tetris
     end
   end
 
-  def move_down!
+  def advance_piece!
     if clear_down?
       @piece_position = [x_coordinate_of_piece, y_coordinate_of_piece-1]
     else
