@@ -3,7 +3,7 @@ class Piece
     "\u2588"
   end
 
-  def create_piece
+  def create
     @piece = []
     2.times { @piece << block }
 
