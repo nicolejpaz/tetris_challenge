@@ -17,9 +17,12 @@ describe Piece do
     end
   end
 
-  context "create" do
+  context "create_piece" do
     it "creates a piece from the individual blocks" do
-      @piece.create.should eql [["\u2588", "\u2588"], ["\u2588", "\u2588"]]
+      @piece.representation.should eql [
+        [Piece::CONSTITUENT_BLOCK, Piece::CONSTITUENT_BLOCK],
+        [Piece::CONSTITUENT_BLOCK, Piece::CONSTITUENT_BLOCK]
+      ]
     end
   end
 end

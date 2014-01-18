@@ -1,14 +1,22 @@
 class Piece
   CONSTITUENT_BLOCK = "\u2588"
-  
+
+  attr_reader :representation
+
+  def initialize
+    @representation = build_representation
+  end
+
   def block
     CONSTITUENT_BLOCK
   end
 
-  def create
-    @piece = []
-    2.times { @piece << block }
+  private
 
-    [@piece, @piece]
+  def build_representation
+    [
+      [CONSTITUENT_BLOCK, CONSTITUENT_BLOCK],
+      [CONSTITUENT_BLOCK, CONSTITUENT_BLOCK]
+    ]
   end
 end
