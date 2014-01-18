@@ -1,6 +1,8 @@
 class Piece
+  CONSTITUENT_BLOCK = "\u2588"
+  
   def block
-    "\u2588"
+    CONSTITUENT_BLOCK
   end
 
   def create
