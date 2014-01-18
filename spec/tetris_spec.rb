@@ -40,9 +40,9 @@ describe Tetris do
     end
   end
 
-  context "#collision_imminent?" do
+  context "#any_board_pieces_in_the_way?" do
     it "should return true if there are not any pieces to the left, right or bottom" do
-      @tetris.collision_imminent?.should eql true
+      @tetris.any_board_pieces_in_the_way?.should eql true
     end
   end
 

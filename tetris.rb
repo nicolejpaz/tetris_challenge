@@ -33,7 +33,7 @@ class Tetris
     @piece_position.last
   end
 
-  def collision_imminent?
+  def any_board_pieces_in_the_way?
     2.times do |y|
       @rows[x_coordinate_of_piece][y_coordinate_of_piece-y].nil?
     end
